@@ -9,6 +9,17 @@ const driver = {
 // * Input: a driver
 // * Output: a boolean if the driver can rent a car
 
+function canRentACar(aDriver){
+  const boolCanDrive=(aDriver.driverLicense==="B")
+  && (new Date().getFullYear()-aDriver.licenseIssued >= 2)
+  &&(aDriver.numberOfAccident===0 || aDriver.bonus >=0.7);
+
+  return boolCanDrive;
+
+}
+
+console.log(canRentACar(driver));
+
 
 
 
