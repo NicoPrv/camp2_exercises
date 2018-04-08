@@ -5,7 +5,7 @@
 
 function double(array){
   // I create an empty array result that will contain the output
-  result=[];
+  let result=[];
   // I iterate through the input array
   for (let i=0;i<array.length;i++){
     // I push in my result array the doubles values
