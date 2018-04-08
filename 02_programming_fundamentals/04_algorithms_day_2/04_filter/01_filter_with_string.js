@@ -5,38 +5,40 @@
 
 
 //console.log ( filter ([1,3,4,5,19,22,67],"even") );
-let result = [] ;
-function filter (myArray, oddOrEven) {
+function filter(array, str) {
+  let result=[];
 
-  if (myArray !== []){
-
-    if (oddOrEven === "even") {
-      myArray.forEach (filterEven);
-    } else if (oddOrEven === "odd"){
-      myArray.forEach (filterOdd);
-    }
-
-    return result;
-
+  if (array.length === 0){
+    result = array;
+    console.log ("Tableau vide !");
   }
 
+  else if(str==="even" && array !==[]){
+    const newArrayEven=array.filter(isEven);
+    result= newArrayEven;
+  }
+
+  else if(str==="odd" && array !==[]){
+    const newArrayOdd=array.filter(isOdd);
+    result= newArrayOdd;
+  }
+  else{
+    console.log("Mauvais paramètre ou tableau vide");
+    result= array;
+
+  }
+  return result;
 
 }
 
-function filterEven (number) {
-  if (number % 2 === 0){
-    result.push(number) ;
-  }
+
+function isEven(number){
+  return number % 2 === 0 ;
 }
 
-function filterOdd (number) {
-  if (number % 2 !== 0){
-    result.push(number) ;
-  }
+function isOdd (number){
+  return number % 2 !== 0;
 }
-
-
-console.log(filter([1,2,3,4,5], "odd"));
 
 // do not remove this line, it is for tests
 module.exports = filter;
