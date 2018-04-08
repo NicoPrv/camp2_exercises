@@ -5,25 +5,29 @@
 // eg: join(["zero", "one", "two"], "-") => "zero - one - two"
 
 let _separator="";
-
+let chaine="";
+let arraySize;
 
 function joinArray(array, separator){
   _separator=separator;
-  const output = array.reduce(join);
+  arraySize=array.length;
+  const output = array.reduce(join,0,array.length-1);
   //console.log output;
   console.log(output);
   return output;
 }
 
 
-function join(element){
-  return element+_separator;
+function join(total, element){
+  chaine+=element+""+_separator;
+  return chaine;
+
   //console.log("pouet");
 }
 
 
 //console.log(_separator);
-joinArray(["un","deux","trois"],"-");
+joinArray(["un","deux","trois"],"|");
 
 //joinArray(["zero","un","deux","trois"],"-");
 // ⚠ Do not remove me ! It's for tests
