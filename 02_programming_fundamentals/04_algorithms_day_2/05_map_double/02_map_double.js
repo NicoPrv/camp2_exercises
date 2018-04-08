@@ -12,6 +12,28 @@
 
 // Your code here...
 
+let result;
+
+function double(number){
+  result.push(number*2);
+  //return number * 2;
+}
+
+
+function map(array,func){
+  result=[];
+  for (let i=0;i<array.length;i++){
+    func(array[i]);
+  }
+  return result;
+}
+// Test
+console.log(map([1,2,3],double));
+console.log(map([10,234,675],double));
+
+
+
+
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
 module.exports = { double: double, map: map };
