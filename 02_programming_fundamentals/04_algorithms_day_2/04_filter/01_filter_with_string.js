@@ -20,19 +20,21 @@ function filter (myArray, oddOrEven) {
 
   }
 
-  function filterEven (number) {
-    if (number % 2 === 0){
-      result.push(number) ;
-    }
-  }
-
-  function filterOdd (number) {
-    if (number % 2 !== 0){
-      result.push(number) ;
-    }
-  }
 
 }
+
+function filterEven (number) {
+  if (number % 2 === 0){
+    result.push(number) ;
+  }
+}
+
+function filterOdd (number) {
+  if (number % 2 !== 0){
+    result.push(number) ;
+  }
+}
+
 
 console.log(filter([1,2,3,4,5], "odd"));
 
