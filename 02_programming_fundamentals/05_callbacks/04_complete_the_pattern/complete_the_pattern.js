@@ -33,9 +33,28 @@
 // 1111111111111111111111
 // ```
 
+
+// Your code here
+
 function pattern(size) {
-  // Your code here
+  let result="";
+  let str="";
+  if (size>0){
+    console.log("number OK");
+    for (let i=1 ; i <= size ; i++){
+      //console.log(i);
+      result+=(i.toString(10).repeat(i));
+      result+="\n";
+
+    }return result.trim();
+  }else{
+    console.log("number NOK");
+    return "";
+  }
 }
+
+
+pattern(10);
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
