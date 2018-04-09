@@ -12,3 +12,14 @@
 // **********
 // **********
 // ```
+
+let stars="";
+
+for (let i=0 ; i<10 ; i++){
+  stars+="*";
+
+}
+
+for (let i=0 ; i<10 ; i++){
+  console.log(stars);
+}
