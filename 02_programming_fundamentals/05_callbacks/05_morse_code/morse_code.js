@@ -45,9 +45,28 @@ const MORSE_CODE = {
 };
 
 function decodeMorse(morse) {
+  let good="";
+  let result=[];
+  let lettersArray = morse.split(" ");
+
+  for(let i=0 ; i<lettersArray.length ; i++){
+    console.log(MORSE_CODE[lettersArray[i]]);
+    result.push(MORSE_CODE[lettersArray[i]]);
+  }
+
+  console.log(result.join(""));
+  return(result.join(""));
+
+  //console.log(result);
+  console.log("this is first try : " + MORSE_CODE[lettersArray[0]]);
+
+
+
+  //console.log(lettersArray);
   // Your code here
 }
 
+decodeMorse(".... . -.--   .--- ..- -.. .");
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
 module.exports = decodeMorse;
