@@ -7,8 +7,9 @@ const thisIsThePlayer = (callback) => {
 
 function sayHello (object) {
   //.log("ça passe");
-  //console.log("Hello, " + object.name);
-  return ("Hello, " + object.name) ;
+
+  console.log("Hello, " + object.name);
+  return ("Hello, " + object.name);
 }
 
 thisIsThePlayer(sayHello);
