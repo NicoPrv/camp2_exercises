@@ -12,13 +12,13 @@ function double(array){
     result.push(array[i]*2);
   }
   //test is OK
-  console.log(result);
+
   // I return the result
   return result;
 }
 
 // Test
-double([1,2,3]);
+console.log(double([1,2,3]));
 
 
 // Do not remove last lines, it is for tests
