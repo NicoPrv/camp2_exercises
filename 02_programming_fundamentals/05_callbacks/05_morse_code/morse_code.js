@@ -41,7 +41,8 @@ const MORSE_CODE = {
   "-....": "6",
   "--...": "7",
   "---..": "8",
-  "----.": "9"
+  "----.": "9",
+  "":" "
 };
 
 function decodeMorse(morse) {
@@ -51,11 +52,16 @@ function decodeMorse(morse) {
 
   for(let i=0 ; i<lettersArray.length ; i++){
     console.log(MORSE_CODE[lettersArray[i]]);
-    result.push(MORSE_CODE[lettersArray[i]]);
+
+      result.push(MORSE_CODE[lettersArray[i]]);
+
   }
 
-  console.log(result.join(""));
-  return(result.join(""));
+  //console.log(result.join(" "));
+  let test=result.join("");
+  console.log(result);
+  console.log(test);
+  //return(result.join(" "));
 
   //console.log(result);
   console.log("this is first try : " + MORSE_CODE[lettersArray[0]]);
