@@ -18,33 +18,35 @@ const mock = function(stringToPass) {
       let userNumber = Number(strNumber) ;
 
       if(userNumber > mysteryNumber && userNumber > 0 && userNumber < 101){
-        console.log("Too high");
-        mock("Try another number\n");
+        //console.log("Too high");
+        mock("Too high\n");
       } else if (userNumber < mysteryNumber && userNumber > 0 && userNumber < 101){
-        console.log("Too low");
-        mock("Try another number\n");
+        //console.log("Too low");
+        mock("Too low\n");
       } else if (userNumber === mysteryNumber){
         switch (tries){
           case 1:
-          //console.log ("WAOUH, first try, you're a magician aren't you ?");
-          console.log("You won!\n");
-          //mock("Try another number");
-          break;
+            console.log ("WAOUH, first try, you're a magician aren't you ?");
+            console.log("You won!");
+            //mock("Try another number");
+            break;
 
-          default:mock("You won!\n");
-          console.log(`You guessed the number in ${tries} times!`);
-          break;
+          default:
+            console.log("You won!");
+            console.log(`You guessed the number in ${tries} times!`);
+            break;
 
         }
         return reader.close();
       }else {
-        console.log("The number is between 1 and 100");
-        mock("Try another number\n");
+        //console.log("The number is between 1 and 100");
+        mock("The number is between 1 and 100\n");
       }
 
     }else{
       console.log("This was not a number");
-      mock("Try another number\n");
+      mock("This was not a number\n");
+      //mock("Try another number\n");
     }
   });
 };
