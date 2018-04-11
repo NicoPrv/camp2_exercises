@@ -9,7 +9,7 @@ const reader = readline.createInterface({
 });
 
 let tries=0;
-const mysteryNumber = Math.floor(Math.random()*100);
+const mysteryNumber = (Math.floor(Math.random()*100))+1;
 
 const mock = function(stringToPass) {
   tries++;
