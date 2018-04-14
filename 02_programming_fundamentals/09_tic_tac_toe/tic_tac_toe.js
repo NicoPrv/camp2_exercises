@@ -26,8 +26,6 @@ function start(){
   askUserToPlay(`::: Welcome to super Tic Tac Toe ::: \n ${chooseAPlayerRandomly()}, your turn ! pick your cell \n`);
 }
 
-
-
 function getNextPlayer(player){
   player=currentPlayer;
   if(currentPlayer === "🎃  player 1"){
@@ -37,7 +35,6 @@ function getNextPlayer(player){
   }
   return currentPlayer;
 }
-
 
 function nextTurn(){
   if(gridState.some(elem => typeof elem === "number")){
@@ -49,6 +46,10 @@ function nextTurn(){
   }
 }
 
+function replayTurn(){
+  displayGrid();
+  askUserToPlay(`Not a valid choice ${currentPlayer}, please replay ! \n`);
+}
 
 function checkPlayer2Wins(){
   if((gridState[0]==="🐰" && gridState[1]==="🐰" && gridState[2]==="🐰")
@@ -60,7 +61,6 @@ function checkPlayer2Wins(){
   ||(gridState[0]==="🐰" && gridState[4]==="🐰" && gridState [8]==="🐰")
   ||(gridState[6]==="🐰" && gridState[4]==="🐰" && gridState [2]==="🐰")){
     displayGrid();
-
     console.log("🐰  PLAYER 2 WINS!");
     console.log("\007");
     reader.close();
@@ -69,6 +69,15 @@ function checkPlayer2Wins(){
   }
 }
 
+function checkUserInput(input){
+  let inputOK;
+  if(!isNaN(input) && input>0 && input<10 && typeof gridState[input-1]==="number"){
+    inputOK = true;
+  }else{
+    inputOK = false;
+  }
+  return inputOK;
+}
 
 function checkPlayer1Wins(){
   if((gridState[0]==="🎃" && gridState[1]==="🎃" && gridState[2]==="🎃")
@@ -80,7 +89,6 @@ function checkPlayer1Wins(){
   || (gridState[0]==="🎃" && gridState[4]==="🎃" && gridState [8]==="🎃")
   || (gridState[6]==="🎃" && gridState[4]==="🎃" && gridState [2]==="🎃")){
     displayGrid();
-    //getNextPlayer();
     console.log("🎃  PLAYER 1 WINS!");
     console.log("\007");
     reader.close();
@@ -89,23 +97,29 @@ function checkPlayer1Wins(){
   }
 }
 
-
 function askUserToPlay(message){
   reader.question(message, cell => {
     if (currentPlayer === "🐰  player 2"){
-      gridState[cell-1]="🐰";
-      checkPlayer2Wins();
-
-    }else{
-      gridState[cell-1]="🎃";
-      checkPlayer1Wins();
+      if(checkUserInput(cell)){
+        gridState[cell-1]="🐰";
+        checkPlayer2Wins(cell);
+      }else{
+        replayTurn();
+        return;
+      }
+    }else if (currentPlayer === "🎃  player 1"){
+      if(checkUserInput(cell)){
+        gridState[cell-1]="🎃";
+        checkPlayer1Wins();
+      }else{
+        replayTurn();
+        return;
+      }
     }
-
     if(finished===false){
       displayGrid();
       nextTurn();
     }
-
   });
 }
 
