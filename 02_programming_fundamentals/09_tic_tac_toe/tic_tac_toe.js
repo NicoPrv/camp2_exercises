@@ -15,7 +15,7 @@ function displayGrid(){
 
 function chooseAPlayerRandomly(){
   let randomNumber = Math.round(Math.random());
-  randomNumber ===0 ? currentPlayer = "🐨  player 1" : currentPlayer = "🦊  player 2";
+  randomNumber === 0 ? currentPlayer = "🐨  player 1" : currentPlayer = "🦊  player 2";
   return currentPlayer ;
 }
 
