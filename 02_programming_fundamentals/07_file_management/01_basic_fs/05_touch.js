@@ -8,26 +8,25 @@ function touch(fileName){
   //check there is not already a file with this name
 
 
-  
-  fs.open(fileName, 'wx', (err, file) => {
+
+  fs.open(fileName, "wx", (err, file) => {
+
     if (err) {
-      if (err.code === 'EEXIST') {
-        console.error(`file ${fileName} already exists!`);
-        return;
+      if (err.code === "EEXIST") {
+        fs.utimesSync(fileName, new Date(), new Date());
+        console.warn(`file ${fileName} already exists!`);
       }
+    }
 
-      throw err;
-    }else{
-
-
-      writeMyData(file);
+    else{
+      console.log(`file ${fileName} has been created!`);
     }
   });
 
 
-} // END OF copyPaste function
+} // END OF touch function
 
-touch ("testPouet.txt");
+//touch ("test3Pouet.txt");
 
 
 
