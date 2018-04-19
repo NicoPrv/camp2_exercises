@@ -1,9 +1,11 @@
 const grow = (tree) => {
+
   if (tree.age < 10) {
     tree.height += 25;
   } else if (tree.age < 20) {
     tree.height += 10;
   }
+  //console.log(tree.height);
 };
 
 const mightDie = (tree) => {
