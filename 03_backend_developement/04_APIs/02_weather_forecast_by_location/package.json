@@ -1,7 +1,6 @@
 {
   "name": "02_weather_by_location",
   "version": "1.0.0",
-  "description": "",
   "main": "weatherByLocation.js",
   "scripts": {
     "test": "jest"
@@ -13,6 +12,7 @@
     "jest": "^21.2.1"
   },
   "dependencies": {
-    "request": "^2.83.0"
-  }
+    "request": "^2.85.0"
+  },
+  "description": ""
 }

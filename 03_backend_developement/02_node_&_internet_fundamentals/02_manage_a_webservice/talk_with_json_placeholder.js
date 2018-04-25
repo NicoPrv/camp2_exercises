@@ -189,8 +189,56 @@ request(
   {
     url: `http://jsonplaceholder.typicode.com/posts/${postId}`,
     method: "PATCH",
-    body:{
+    form:{
       "title": newTitle
+    }
+  },
+
+  function (error, response, result) {
+    if(!error){
+      callback(result);
+    }else{
+      console.warn(error);
+    }
+  }
+  );
+
+}
+
+
+
+function updatePostBody(postId, newBody, callback){
+request(
+
+  {
+    url: `http://jsonplaceholder.typicode.com/posts/${postId}`,
+    method: "PATCH",
+    form:{
+      "body": newBody
+    }
+  },
+
+  function (error, response, result) {
+    if(!error){
+      callback(result);
+    }else{
+      console.warn(error);
+    }
+  }
+  );
+
+}
+
+
+function updatePost(postId, newTitle, newBody, callback){
+request(
+
+  {
+    url: `http://jsonplaceholder.typicode.com/posts/${postId}`,
+    method: "PATCH",
+    form:{
+      "title":newTitle,
+      "body": newBody
     }
   },
 
@@ -209,6 +257,13 @@ request(
 
 
 
+//updatePostBody(postId, newBody, callback)
+
+
+updatePostTitle(2, "lololol", console.log);
+
+
+
 
 module.exports = {
   fetchPosts: fetchPosts,
@@ -217,6 +272,8 @@ module.exports = {
   fetchUser:fetchUser,
   fetchUsers:fetchUsers,
   fetchComments:fetchComments,
+  updatePostBody:updatePostBody,
+  updatePost:updatePost,
   updatePostTitle:updatePostTitle,
   publishPost:publishPost,
   publishComment:publishComment,

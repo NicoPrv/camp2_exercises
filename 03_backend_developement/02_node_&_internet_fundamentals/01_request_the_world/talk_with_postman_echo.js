@@ -8,7 +8,7 @@ function simpleGet(callback){
     },
     function (error, response, result) {
       if(!error){
-        callback(result);
+        return callback(result);
       }else{
         console.warn(error);
       }
@@ -33,7 +33,7 @@ function simpleGetWithParams(callback){
     },
     function (error, response, result) {
       if(!error){
-        callback(JSON.parse(result).args);
+        return callback(JSON.parse(result).args);
       }else{
         console.warn(error);
       }
@@ -46,11 +46,12 @@ function displayResult2(result){
   return result;
 }
 
-const date=new Date();
-let dateOK=date.getUTCFullYear()+"-"+date.getUTCMonth()+"-"+date.getDay();
+
 
 
 function validateTimestamp(callback){
+  const date=new Date();
+  let dateOK=date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDay();
   request(
     {
       url: `https://postman-echo.com/time/valid?timestamp=${dateOK}`,
@@ -58,7 +59,7 @@ function validateTimestamp(callback){
     },
     function (error, response, result) {
       if(!error){
-        callback(result);
+        return callback(result);
       }else{
         console.warn(error);
       }

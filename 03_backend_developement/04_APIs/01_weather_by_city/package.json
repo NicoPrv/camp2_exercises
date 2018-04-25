@@ -1,7 +1,7 @@
 {
   "name": "01_weather",
   "version": "1.0.0",
-  "description": "",
+  "description": "Use of open weather API",
   "main": "weather.js",
   "scripts": {
     "test": "jest"
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.83.0"
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "jest": "^21.2.1"
