@@ -1,0 +1,18 @@
+
+//$prim:#0082C3;
+//--primary: $prim;
+
+
+
+$theme-colors: (
+  primary: #0082C3,
+  secondary: red,
+  success: green,
+  info: cyan,
+  warning: yellow,
+  danger: red,
+  light: #ccc,
+  dark: #999
+);
+
+@import "./node_modules/bootstrap/scss/bootstrap";

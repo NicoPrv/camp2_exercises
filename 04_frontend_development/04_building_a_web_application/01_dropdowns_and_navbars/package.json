@@ -1,17 +1,14 @@
 {
-  "name": "01_first_page",
+  "name": "01_dropdowns_and_navbars",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm install && jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "wapiti": "^1.3.0"
-  },
   "dependencies": {
-    "path": "^0.12.7"
+    "bootstrap": "^4.1.1"
   }
 }
