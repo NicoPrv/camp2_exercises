@@ -1,0 +1,32 @@
+th{
+  font-weight:normal;
+background-color:#ebebeb;
+padding:10px;
+border:solid grey 1 px;
+}
+
+thIdSelected{
+  font-weight:bold;
+}
+
+th:hover{
+  cursor:pointer;
+}
+
+table{
+margin-top:100px;
+  border-collapse: collapse;
+}
+
+td{
+  padding:10px;
+  border-bottom:solid #B6B6B6 1px;
+
+}
+
+#test{
+  display:flex;
+  justify-content:center;
+  margin:auto;
+  text-align:center;
+}
